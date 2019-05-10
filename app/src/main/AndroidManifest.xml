@@ -2,9 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="gaurishankar.com.hifisoftlab.mlapp">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RecognizeFace"></activity>
+        <activity android:name=".CustomModelInference"></activity>
+        <activity android:name=".AutoModelInference" />
+        <activity android:name=".SmartReply" />
+        <activity android:name=".Translation" />
+        <activity android:name=".LanguageIdentification" />
+        <activity android:name=".RecognizeLandmark" />
+        <activity android:name=".ObjectDetectionTracking" />
+        <activity android:name=".ImageLabeling" />
+        <activity android:name=".BarCodeScanning" />
+        <activity
+            android:name=".RecognizeFace"
+            android:screenOrientation="landscape" />
         <activity android:name=".RecognizeText" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -26,7 +36,6 @@
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="ocr,face" />
-
     </application>
 
 </manifest>
