@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "811905355831",
+    "firebase_url": "https://mlapp-2c55a.firebaseio.com",
+    "project_id": "mlapp-2c55a",
+    "storage_bucket": "mlapp-2c55a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811905355831:android:0eae641c9aeb7f6b",
+        "android_client_info": {
+          "package_name": "gaurishankar.com.hifisoftlab.mlapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811905355831-qt8fa8g7vv4c266k26f2g3ptd3mdus3r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "gaurishankar.com.hifisoftlab.mlapp",
+            "certificate_hash": "8c81f030ce865ed4f1c0327f5de7b9a5ae2954c5"
+          }
+        },
+        {
+          "client_id": "811905355831-9oc0ts2c6398l8h1vk14k3vm1i9qrnh6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL_Wtd90y9oLv8VPCX5wZjVghpo0CmxuE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "811905355831-9oc0ts2c6398l8h1vk14k3vm1i9qrnh6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
