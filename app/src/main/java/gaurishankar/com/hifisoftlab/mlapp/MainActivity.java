@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         mTextRecBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RecognizeFace.class);
+                Intent intent = new Intent(MainActivity.this, RecognizeText.class);
                 startActivity(intent);
             }
         });

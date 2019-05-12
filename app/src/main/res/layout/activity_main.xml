@@ -7,10 +7,6 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Recognize "/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,15 +15,15 @@
 
         <Button
             android:id="@+id/text_rec_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
             android:text="Recognize Text"/>
 
         <Button
             android:id="@+id/face_detection_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
             android:text="Face Detection"/>
 
@@ -40,15 +36,15 @@
 
         <Button
             android:id="@+id/bar_code_scan_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
             android:text="Bar Code Scanning"/>
 
         <Button
             android:id="@+id/image_labeling_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
             android:text="Image Lebeling"/>
 
@@ -61,15 +57,15 @@
 
         <Button
             android:id="@+id/object_detection_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
             android:text="Object Detection &amp; Tracking "/>
 
         <Button
             android:id="@+id/landmark_rec_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
             android:text="Landmark Recognition"/>
 
@@ -84,15 +80,15 @@
 
         <Button
             android:id="@+id/language_identification_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
             android:text="Language Identification "/>
 
         <Button
             android:id="@+id/translation_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
             android:text="Translation"/>
 
@@ -105,15 +101,15 @@
 
         <Button
             android:id="@+id/smart_reply_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
             android:text="Smart Reply"/>
 
         <Button
             android:id="@+id/auto_model_in_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
             android:text="AutoML model inference"/>
 
@@ -126,16 +122,11 @@
 
         <Button
             android:id="@+id/custom_model_in_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
             android:text="Custom model inference"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="AutoML model inference"/>
 
     </LinearLayout>
 
