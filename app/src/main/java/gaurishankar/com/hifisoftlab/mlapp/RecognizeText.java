@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.hardware.camera2.CameraAccessException;
@@ -24,7 +27,6 @@ import android.util.SparseIntArray;
 import android.view.Surface;
 import android.view.View;
 import android.widget.Button;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,18 +34,13 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.gms.vision.L;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata;
-import com.google.firebase.ml.vision.text.FirebaseVisionCloudTextRecognizerOptions;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
 import com.google.firebase.ml.vision.text.RecognizedLanguage;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.Arrays;
 import java.util.List;
 
 public class RecognizeText extends AppCompatActivity {
@@ -111,7 +108,7 @@ public class RecognizeText extends AppCompatActivity {
 
             mImg.setImageBitmap(bitmap);
 
-            processImage(image);
+            processImage(image, bitmap);
 
             cursor.close();
 //            ImageView imageView = (ImageView) findViewById(R.id.imgView);
@@ -120,15 +117,15 @@ public class RecognizeText extends AppCompatActivity {
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK)
         {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
-            Bitmap b = Bitmap.createScaledBitmap(photo, 120, 120, false);
+            Bitmap b = Bitmap.createScaledBitmap(photo, 1200, 600, false);
             mImg.setImageBitmap(b);
 
             FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(b);
-            processImage(image);
+            processImage(image,b);
         }
     }
 
-    private void processImage(final FirebaseVisionImage image) {
+    private void processImage(final FirebaseVisionImage image, final Bitmap b) {
         mProgress.setMessage("Processing...");
         FirebaseVisionTextRecognizer detector = FirebaseVision.getInstance()
                 .getOnDeviceTextRecognizer();
@@ -144,6 +141,57 @@ public class RecognizeText extends AppCompatActivity {
                                 v.setText(resultText);
                                 Toast.makeText(getApplicationContext(),resultText,Toast.LENGTH_LONG);
 
+
+
+                                Bitmap mutableBitmap = b.copy(Bitmap.Config.ARGB_8888, true);
+
+
+                                Canvas canvas = new Canvas(mutableBitmap);
+
+                                // Draw a solid color to the canvas background
+
+                                // Initialize a new Paint instance to draw the Rectangle
+                                Paint paint = new Paint();
+                                paint.setColor(Color.RED);
+                                paint.setStrokeWidth(5);
+                                paint.setStyle(Paint.Style.STROKE);
+
+//                                String resultText = result.getResult().getText();
+                                for (FirebaseVisionText.TextBlock block: result.getResult().getTextBlocks()) {
+                                    String blockText = block.getText();
+                                    Float blockConfidence = block.getConfidence();
+                                    List<RecognizedLanguage> blockLanguages = block.getRecognizedLanguages();
+                                    Point[] blockCornerPoints = block.getCornerPoints();
+                                    Rect blockFrame = block.getBoundingBox();
+                                    for (FirebaseVisionText.Line line: block.getLines()) {
+                                        String lineText = line.getText();
+                                        Float lineConfidence = line.getConfidence();
+                                        List<RecognizedLanguage> lineLanguages = line.getRecognizedLanguages();
+                                        Point[] lineCornerPoints = line.getCornerPoints();
+                                        Rect lineFrame = line.getBoundingBox();
+
+
+                                        //start
+
+
+
+
+
+                                        //end
+                                        for (FirebaseVisionText.Element element: line.getElements()) {
+                                            String elementText = element.getText();
+                                            Float elementConfidence = element.getConfidence();
+                                            List<RecognizedLanguage> elementLanguages = element.getRecognizedLanguages();
+                                            Point[] elementCornerPoints = element.getCornerPoints();
+                                            Rect elementFrame = element.getBoundingBox();
+                                            canvas.drawRect(elementFrame,paint);
+
+                                        }
+                                        mImg.setImageBitmap(mutableBitmap);
+
+                                    }
+                                }
+
                                 mProgress.dismiss();
 
                             }
@@ -156,6 +204,10 @@ public class RecognizeText extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(),"Recognizing Failed",Toast.LENGTH_LONG).show();
                                     }
                                 });
+
+
+
+
     }
 
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
