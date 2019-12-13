@@ -25,8 +25,7 @@
         <activity android:name=".ImageLabeling" />
         <activity android:name=".BarCodeScanning" />
         <activity
-            android:name=".RecognizeFace"
-            android:screenOrientation="landscape" />
+            android:name=".RecognizeFace"/>
         <activity android:name=".RecognizeText" />
         <activity android:name=".MainActivity">
             <intent-filter>
