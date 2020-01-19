@@ -1,6 +1,6 @@
 # ML Android App using Firebase ML Kit
 
-This is simple android bulit using Firebase ML Kit. It has simple user interface to navigate for various uses of machine learning like face detecttion, text recognization, bar code scanner and more. You can also apply these features by passing from already saved file in storage. 
+This is simple android app built using Firebase ML Kit. It has simple user interface to navigate for various uses of machine learning like face detection, text recognization, bar code scanning and more. You can also apply these features by passing from already saved file in storage. 
 
 
 ## This Android App features.
