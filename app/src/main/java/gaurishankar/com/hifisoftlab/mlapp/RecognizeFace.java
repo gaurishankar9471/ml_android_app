@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -48,6 +49,7 @@ public class RecognizeFace extends AppCompatActivity {
     private final static int RESULT_LOAD_IMAGE = 1;
     private ImageView mImgView;
 
+    private TextView mTxt;
 
 
     @Override
@@ -59,7 +61,7 @@ public class RecognizeFace extends AppCompatActivity {
         mOpenGalleryBtn = findViewById(R.id.choose_gallery_btn);
 
         mImgView = findViewById(R.id.imgview);
-
+        mTxt = findViewById(R.id.txt);
 
         mCameraBtn.setOnClickListener(new View.OnClickListener() {
             @Override
